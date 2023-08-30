@@ -1,0 +1,11 @@
+<h4>List</h4>
+<ul class="list-group">
+  <li *ngFor="let character of characters; last as isLast; even as isEven; index as id;" class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{'list-group-item-success': isLast, 'list-group-item-primary': isEven}">
+    <div>
+      <span>{{character.name}} - </span>
+      <strong>Power: </strong>
+      <span>{{character.power}}</span>
+    </div>
+    <button class="btn btn-danger" (click)="removeCharacter(character.id!)">×</button>
+  </li>
+</ul>
